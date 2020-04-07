@@ -27,4 +27,4 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- powershell: .\x64\Release\MediaFoundationUsage.exe
+- script: x64\Release\MediaFoundationUsage.exe
