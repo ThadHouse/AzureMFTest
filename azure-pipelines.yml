@@ -18,13 +18,15 @@ steps:
   - script: |
       mkdir C:\buildtesting
 
-      copy wpiutild.exe C:\buildtesting\wpiutild.exe
-      copy wpiutiljni.exe C:\buildtesting\wpiutiljni.exe
+      copy wpiutild.dll C:\buildtesting\wpiutild.dll
+      copy wpiutiljni.dll C:\buildtesting\wpiutiljni.dll
       copy Program.java C:\buildtesting\Program.java
+
+      C:
 
       cd C:\buildtesting
 
-      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i wpiutild.exe +sls
+      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i wpiutild.dll +sls
       "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i wpiutiljni.dll +sls
       "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i "C:\Program Files\Java\zulu-11-azure-jdk_11.33.15-11.0.4-win_x64\bin\java.exe" +sls
 
