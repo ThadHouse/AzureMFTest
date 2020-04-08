@@ -15,16 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
+  - script: |
+      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i\wpiutild.exe +sls
+      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i wpiutiljni.dll +sls
+      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i "C:\Program Files\Java\zulu-11-azure-jdk_11.33.15-11.0.4-win_x64\bin\java.exe" +sls
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+      "C:\Program Files\Java\zulu-11-azure-jdk_11.33.15-11.0.4-win_x64\bin\javac.exe" Program.java
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- script: x64\Release\MediaFoundationUsage.exe
+      "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe" -g -G -x "C:\Program Files\Java\zulu-11-azure-jdk_11.33.15-11.0.4-win_x64\bin\java.exe" "-Djava.library.path=." Program
+    condition: always()
