@@ -16,6 +16,12 @@ variables:
 
 steps:
   - script: |
+      echo %PATH%
+    condition: always()
+  - script: |
+
+
+
       "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i wpiutild.dll +sls
       "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\gflags.exe" -i NativeApp\LoadTest.exe +sls
 
