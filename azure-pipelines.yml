@@ -19,7 +19,7 @@ steps:
       echo %PATH%
     condition: always()
   - script: |
-
+      echo %PATH%
 
       SET PATH=C:\windows\system32;C:\windows;
 
